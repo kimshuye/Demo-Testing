@@ -19,7 +19,7 @@ jobs:
     name: analysis testing
     strategy:
       matrix:
-        node-version: 15.4.0
+        node-version: '15.4.0'
     steps:
     - uses: actions/checkout@v2
     - name: Use Node.js ${{ matrix.node-version }}
@@ -36,7 +36,7 @@ jobs:
     name: unittest testing
     strategy:
       matrix:
-        node-version: 15.4.0
+        node-version: '15.4.0'
     steps:
     - uses: actions/checkout@v2
     - name: Use Node.js ${{ matrix.node-version }}
