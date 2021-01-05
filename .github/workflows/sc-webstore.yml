@@ -10,9 +10,7 @@ on:
     - feature/hello-world
 
 env:
-  DOC_HUB_USER: ${{ secrets.DOC_HUB_USER }}
-  DOC_HUB_PASS: ${{ secrets.DOC_HUB_PASS }}
-  NODE_VERSION: 15.4.0
+  GITHUB_NODE_VERSION: 15.4.0
 
 jobs:
 
@@ -21,7 +19,7 @@ jobs:
     name: analysis testing
     strategy:
       matrix:
-        node-version: ${{NODE_VERSION}}
+        node-version: 15.4.0
     steps:
     - uses: actions/checkout@v2
     - name: Use Node.js ${{ matrix.node-version }}
@@ -38,7 +36,7 @@ jobs:
     name: unittest testing
     strategy:
       matrix:
-        node-version: ${{NODE_VERSION}}
+        node-version: 15.4.0
     steps:
     - uses: actions/checkout@v2
     - name: Use Node.js ${{ matrix.node-version }}
