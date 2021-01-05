@@ -17,12 +17,15 @@ jobs:
   analysis:
     runs-on: ubuntu-latest
     name: analysis testing
+    strategy:
+      matrix:
+        node-version: [15.4.0]
     steps:
     - uses: actions/checkout@v2
-    - name: Use Node.js $GITHUB_NODE_VERSION
+    - name: Use Node.js ${{ matrix.node-version }}
       uses: actions/setup-node@v1
       with:
-        node-version: $GITHUB_NODE_VERSION
+        node-version: ${{ matrix.node-version }}
     - name: Install dependency
       run: cd sc-webstore && npm install
     - name: code analysis
@@ -31,17 +34,20 @@ jobs:
   unittest:
     runs-on: ubuntu-latest
     name: unittest testing
+    strategy:
+      matrix:
+        node-version: [15.4.0]
     steps:
     - uses: actions/checkout@v2
-    - name: Use Node.js $GITHUB_NODE_VERSION
+    - name: Use Node.js ${{ matrix.node-version }}
       uses: actions/setup-node@v1
       with:
-        node-version: $GITHUB_NODE_VERSION
+        node-version: ${{ matrix.node-version }}
     - name: Install dependency
       run: cd sc-webstore && npm install
     - name: run unittest
       run: cd sc-webstore && npm run test
-
+      
   # build-webstore:
   #   runs-on: ubuntu-latest
   #   name: Create Webstore Image 
