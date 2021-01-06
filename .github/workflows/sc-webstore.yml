@@ -5,7 +5,7 @@ name: Shopping Cart Webstore
 on:
   push:
     branches:
-    # - master
+    - master
     - develop
     - feature/hello-world
     - feature/hello-world*
