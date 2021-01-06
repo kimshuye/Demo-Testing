@@ -1,12 +1,10 @@
 pipeline {
   agent any
+  
+  tools {nodejs "node"}
 
   stages {
 
-    agent {
-        docker { image 'node:15.4.0' } 
-    }
-    
     stage('install dependency') {
       steps {
         sh 'make install_dependency_frondend'
