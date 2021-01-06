@@ -91,11 +91,13 @@ engine-strict=true
 ```
 
 
-#### Install ngx-bootstrap framework
+#### Install mdbootstrap framework
 
 
 ```bash
-ng add ngx-bootstrap@6.2.0
+npm install @angular/cdk@10.0.2 --save
+npm install angular-bootstrap-md@10.1.1 --save
+
 ```
 
 

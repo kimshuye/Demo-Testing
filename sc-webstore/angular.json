@@ -7,7 +7,7 @@
       "projectType": "application",
       "schematics": {
         "@schematics/angular:component": {
-          "style": "sass"
+          "style": "scss"
         }
       },
       "root": "",
@@ -28,7 +28,7 @@
               "src/assets"
             ],
             "styles": [
-              "src/styles.sass"
+              "src/styles.scss"
             ],
             "scripts": []
           },
@@ -92,7 +92,7 @@
               "src/assets"
             ],
             "styles": [
-              "src/styles.sass"
+              "src/styles.scss"
             ],
             "scripts": []
           }
@@ -127,6 +127,6 @@
   },
   "defaultProject": "sc-webstore",
   "cli": {
-    "analytics": "1b09656f-5a2d-48a8-9e95-d92d0e7a2e50"
+    "analytics": "00f81520-71ea-40ff-9dcd-856fa32f8a40"
   }
 }
