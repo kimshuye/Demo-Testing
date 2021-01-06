@@ -1,0 +1,18 @@
+version: "3"
+services:
+  webstore:
+    container_name: sc.webstore
+    hostname: sc.webstore
+    image: sc.webstore:1.0.0
+    build:
+      context: sc-webstore
+    ports:
+      - "80:80"
+    # networks:
+    #   - main
+    restart: always
+
+# networks:
+#   main:
+#     external:
+#       name: main-network

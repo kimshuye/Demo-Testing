@@ -38,7 +38,7 @@ npm install --global @angular/cli@10.0.5
 
 ```
 
-## Angular cli version
+### Angular cli version
 
 ```bash
 ng version
@@ -137,4 +137,29 @@ docker build \
      ${SERVICE_LOCALTION1}
 ```
 
+
+### Create Dcoker-compose
+
+
+```bash
+envsubst < docker-compose-template.yml > docker-compose.yml
+```
+
+
+### Check Docker-compose format
+
+
+```bash
+docker-compose -f docker-compose.yml config
+```
+
+
+### Start app Docker
+
+
+```bash
+docker-compose up --detach
+# OR
+docker-compose up
+```
 

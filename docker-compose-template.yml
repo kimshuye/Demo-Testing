@@ -1,0 +1,18 @@
+version: "3"
+services:
+  ${SERVICE_NAME1}:
+    container_name: ${CONTAINER_NAME1}
+    hostname: ${HOST_NAME1}
+    image: ${IMAGE_NAME1}:${IMAGE_TAG1}
+    build:
+      context: ${SERVICE_LOCALTION1}
+    ports:
+      - "80:80"
+    # networks:
+    #   - main
+    restart: always
+
+# networks:
+#   main:
+#     external:
+#       name: main-network
