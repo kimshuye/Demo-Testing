@@ -1,10 +1,8 @@
 pipeline {
   agent any
-  
-  tools {nodejs "node"}
 
   stages {
-
+    
     stage('install dependency') {
       steps {
         sh 'make install_dependency_frondend'
