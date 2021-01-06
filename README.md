@@ -85,8 +85,17 @@ webpack                           4.43.0
 ```
 
 Add the following to ```~/.npmrc``` (same directory as package.json):
+
 ```
 engine-strict=true
+```
+
+
+#### Install ngx-bootstrap framework
+
+
+```bash
+ng add ngx-bootstrap@6.2.0
 ```
 
 

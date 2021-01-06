@@ -20,16 +20,16 @@ describe('AppComponent', () => {
     expect(app).toBeTruthy();
   });
 
-  it(`should have as title 'Hello'`, () => {
+  it(`should have as title 'sc-webstore'`, () => {
     const fixture = TestBed.createComponent(AppComponent);
     const app = fixture.componentInstance;
-    expect(app.title).toEqual('Hello');
+    expect(app.title).toEqual('sc-webstore');
   });
 
   it('should render title', () => {
     const fixture = TestBed.createComponent(AppComponent);
     fixture.detectChanges();
     const compiled = fixture.nativeElement;
-    expect(compiled.querySelector('.content span').textContent).toContain('Hello World');
+    expect(compiled.querySelector('.content span').textContent).toContain('sc-webstore app is running!');
   });
 });
