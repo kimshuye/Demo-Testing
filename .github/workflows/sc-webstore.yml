@@ -1,0 +1,88 @@
+
+
+name: Shopping Cart Webstore
+
+on:
+  push:
+    branches:
+    # - master
+    - develop
+    - feature/hello-world
+    - feature/hello-world*
+
+env:
+  GITHUB_NODE_VERSION: 15.4.0
+  SERVICE_LOCALTION1: sc-webstore
+  DOCKERFILE_LOCALTION1: Dockerfile
+  SERVICE_NAME1: webstore
+  CONTAINER_NAME1: sc.webstore
+  HOST_NAME1: sc.webstore
+  IMAGE_ORG1: tokdev
+  IMAGE_NAME1: sc.webstore
+  IMAGE_TAG1: 1.0.0
+
+jobs:
+
+  analysis:
+    runs-on: ubuntu-latest
+    name: analysis testing
+    strategy:
+      matrix:
+        node-version: [15.4.0]
+    steps:
+    - uses: actions/checkout@v2
+    - name: Use Node.js ${{ matrix.node-version }}
+      uses: actions/setup-node@v1
+      with:
+        node-version: ${{ matrix.node-version }}
+    - name: Install dependency
+      run: cd sc-webstore && npm install
+    - name: code analysis
+      run: cd sc-webstore && npm run lint
+
+  unittest:
+    runs-on: ubuntu-latest
+    name: unittest testing
+    strategy:
+      matrix:
+        node-version: [15.4.0]
+    steps:
+    - uses: actions/checkout@v2
+    - name: Use Node.js ${{ matrix.node-version }}
+      uses: actions/setup-node@v1
+      with:
+        node-version: ${{ matrix.node-version }}
+    - name: Install dependency
+      run: cd sc-webstore && npm install
+    - name: run unittest
+      run: cd sc-webstore && npm run test
+
+  e2etest:
+    runs-on: ubuntu-latest
+    name: e2e test testing
+    strategy:
+      matrix:
+        node-version: [15.4.0]
+    steps:
+    - uses: actions/checkout@v2
+    - name: Use Node.js ${{ matrix.node-version }}
+      uses: actions/setup-node@v1
+      with:
+        node-version: ${{ matrix.node-version }}
+    - name: Install dependency
+      run: cd sc-webstore && npm install
+    - name: run e2e test
+      run: cd sc-webstore && npm run e2e
+      
+  build-webstore:
+    runs-on: ubuntu-latest
+    name: Create Webstore Image 
+    steps:
+    - uses: actions/checkout@v2
+    - name: Build the Docker image
+      run: |
+          docker build \
+            --file ${SERVICE_LOCALTION1}/${DOCKERFILE_LOCALTION1} \
+            --tag ${IMAGE_NAME1}:${IMAGE_TAG1} \
+            ${SERVICE_LOCALTION1}
+
