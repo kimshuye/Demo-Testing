@@ -1,61 +1,54 @@
 pipeline {
-  agent none
+  agent any
 
   stages {
-      
 
-    stage('code analysis') {
-        agent {
-            docker { image 'node:15.4.0' } 
-        }
-        
-            stage('code analysis frontend') {
-                steps {
-                    sh 'make install_dependency_frondend'
-                    sh 'make code_analysis_frontend' 
-                }
-            }
-            
-        
+    stage('install dependency') {
+      steps {
+        sh 'cd sc-webstore && npm install'
+      }
     }
 
-    stage('run unit test') {
-        agent {
-            docker { image 'node:15.4.0' } 
-        }
+    // stage('code analysis') {
+    //   parallel {
+    //     stage('code analysis frontend') {
+    //       steps {
+    //         sh 'cd sc-webstore && npm run lint' 
+    //       }
+    //     }
         
-            stage('unittest frontend') {
-                steps {
-                    sh 'make install_dependency_frondend'
-                    sh 'make run_unittest_frontend'
-                }
-            }
-        
-    }
+    //   }
+    // }
 
-    stage('run e2e test') {
-        agent {
-            docker { image 'node:15.4.0' } 
-        }
-        
-            stage('e2e test frontend') {
-                steps {
-                    sh 'make install_dependency_frondend'
-                    sh 'make run_e2e_frontend'
-                }
-            }
-        
-    }
+    // stage('run unit test') {
+    //   parallel {
+    //     stage('unittest frontend') {
+    //       steps {
+    //         sh 'cd sc-webstore && npm run test'
+    //       }
+    //     }
+    //   }
+    // }
 
-    stage('build') {
-        
-            stage('build frontend') {
-                steps {
-                    sh 'make build_frontend'
-                }
-            }
-        
-    }
+    // stage('run e2e test') {
+    //   parallel {
+    //     stage('e2e test frontend') {
+    //       steps {
+    //         sh 'cd sc-webstore && npm run e2e'
+    //       }
+    //     }
+    //   }
+    // }
+
+    // stage('build') {
+    //   parallel {
+    //     stage('build frontend') {
+    //       steps {
+    //         sh 'make build_frontend'
+    //       }
+    //     }
+    //   }      
+    // }
     
   }
 }
