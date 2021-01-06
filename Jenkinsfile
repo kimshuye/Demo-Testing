@@ -5,7 +5,7 @@ pipeline {
 
     stage('install dependency') {
       steps {
-        sh 'cd sc-webstore && npm install'
+        sh 'cd sc-webstore && sudo apt-get update && sudo apt-get install npm && npm install'
       }
     }
 
