@@ -5,7 +5,7 @@ pipeline {
     
     stage('install dependency') {
       steps {
-        sh 'make install_dependency_frondend'
+        sh 'cd sc-webstore && npm install'
       }
     }
 
