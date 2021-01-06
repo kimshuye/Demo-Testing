@@ -1,23 +1,11 @@
 pipeline {
   agent any
 
-  environment {
-    GITHUB_NODE_VERSION = "15.4.0"
-    SERVICE_LOCALTION1 = "sc-webstore"
-    DOCKERFILE_LOCALTION1 = "Dockerfile"
-    SERVICE_NAME1 = "webstore"
-    CONTAINER_NAME1 = "sc.webstore"
-    HOST_NAME1 = "sc.webstore"
-    IMAGE_ORG1 = "tokdev"
-    IMAGE_NAME1 = "sc.webstore"
-    IMAGE_TAG1 = "1.0.0"
-  }
-
   stages {
 
     stage('install dependency') {
       steps {
-        sh 'cd sc-webstore && npm install'
+        sh 'make install_dependency_frondend'
       }
     }
 
