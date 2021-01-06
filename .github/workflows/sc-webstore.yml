@@ -79,6 +79,15 @@ jobs:
     steps:
     - uses: actions/checkout@v2
     - name: Build the Docker image
+      env:
+        SERVICE_LOCALTION1: sc-webstore
+        DOCKERFILE_LOCALTION1: Dockerfile
+        SERVICE_NAME1: webstore
+        CONTAINER_NAME1: sc.webstore
+        HOST_NAME1: sc.webstore
+        IMAGE_ORG1: tokdev
+        IMAGE_NAME1: sc.webstore
+        IMAGE_TAG1: 1.0.0
       run: |
           docker build \
             --file ${SERVICE_LOCALTION1}/${DOCKERFILE_LOCALTION1} \
