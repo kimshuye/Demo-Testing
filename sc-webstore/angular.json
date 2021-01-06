@@ -13,7 +13,7 @@
         "build": {
           "builder": "@angular-devkit/build-angular:browser",
           "options": {
-            "outputPath": "dist/angular10demo",
+            "outputPath": "dist",
             "index": "src/index.html",
             "main": "src/main.ts",
             "polyfills": "src/polyfills.ts",
@@ -109,7 +109,7 @@
         "e2e": {
           "builder": "@angular-devkit/build-angular:protractor",
           "options": {
-            "protractorConfig": "e2e/protractor.conf.js",
+            "protractorConfig": "e2e/protractor.ci.conf.js",
             "devServerTarget": "angular10demo:serve"
           },
           "configurations": {
@@ -119,6 +119,10 @@
           }
         }
       }
-    }},
-  "defaultProject": "angular10demo"
+    }
+  },
+  "defaultProject": "angular10demo",
+  "cli": {
+    "analytics": "fff3a2d9-e34f-4d60-ad56-95a9bfa87bb7"
+  }
 }
