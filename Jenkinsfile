@@ -2,56 +2,59 @@ pipeline {
   agent none
 
   stages {
-
-    agent {
-        docker { image 'node:15.4.0' } 
-    }
-    
-    stage('install dependency') {
-      steps {
-        sh 'make install_dependency_frondend'
-      }
-    }
+      
 
     stage('code analysis') {
-      parallel {
-        stage('code analysis frontend') {
-          steps {
-            sh 'cd sc-webstore && npm run lint' 
-          }
+        agent {
+            docker { image 'node:15.4.0' } 
         }
-        
-      }
+        parallel {
+            stage('code analysis frontend') {
+                steps {
+                    sh 'make install_dependency_frondend'
+                    sh 'make code_analysis_frontend' 
+                }
+            }
+            
+        }
     }
 
     stage('run unit test') {
-      parallel {
-        stage('unittest frontend') {
-          steps {
-            sh 'cd sc-webstore && npm run test'
-          }
+        agent {
+            docker { image 'node:15.4.0' } 
         }
-      }
+        parallel {
+            stage('unittest frontend') {
+                steps {
+                    sh 'make install_dependency_frondend'
+                    sh 'make run_unittest_frontend'
+                }
+            }
+        }
     }
 
     stage('run e2e test') {
-      parallel {
-        stage('e2e test frontend') {
-          steps {
-            sh 'cd sc-webstore && npm run e2e'
-          }
+        agent {
+            docker { image 'node:15.4.0' } 
         }
-      }
+        parallel {
+            stage('e2e test frontend') {
+                steps {
+                    sh 'make install_dependency_frondend'
+                    sh 'make run_e2e_frontend'
+                }
+            }
+        }
     }
 
     stage('build') {
-      parallel {
-        stage('build frontend') {
-          steps {
-            sh 'make build_frontend'
-          }
-        }
-      }      
+        parallel {
+            stage('build frontend') {
+                steps {
+                    sh 'make build_frontend'
+                }
+            }
+        }      
     }
     
   }
