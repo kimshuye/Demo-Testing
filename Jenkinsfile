@@ -1,11 +1,15 @@
 pipeline {
-  agent any
+  agent none
 
   stages {
+
+    agent {
+        docker { image 'node:15.4.0' } 
+    }
     
     stage('install dependency') {
       steps {
-        sh 'cd sc-webstore && npm install'
+        sh 'make install_dependency_frondend'
       }
     }
 
