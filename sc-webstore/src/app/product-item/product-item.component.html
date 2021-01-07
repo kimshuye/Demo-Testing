@@ -16,6 +16,6 @@
       {{productItem.price}}
     </mdb-card-text>
 
-    <a href="#" mdbBtn color="primary" mdbWavesEffect>View More</a>
+    <a [routerLink]="['/product',productItem.id]" mdbBtn color="primary" mdbWavesEffect>View More</a>
   </mdb-card-body>
 </mdb-card>
