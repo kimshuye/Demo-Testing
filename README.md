@@ -97,6 +97,8 @@ engine-strict=true
 ```bash
 npm install @angular/cdk@10.0.2 --save
 npm install angular-bootstrap-md@10.1.1 --save
+npm install -–save chart.js@2.5.0 @types/chart.js @fortawesome/fontawesome-free hammerjs animate.css 
+ng serve --o 
 
 ```
 

@@ -10,7 +10,7 @@ describe('workspace-project App', () => {
 
   it('should display welcome message', () => {
     page.navigateTo();
-    expect(page.getTitleText()).toEqual('sc-webstore app is running!');
+    expect(page.getTitleText()).toEqual('Toy');
   });
 
   afterEach(async () => {
