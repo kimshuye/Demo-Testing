@@ -85,8 +85,21 @@ webpack                           4.43.0
 ```
 
 Add the following to ```~/.npmrc``` (same directory as package.json):
+
 ```
 engine-strict=true
+```
+
+
+#### Install mdbootstrap framework
+
+
+```bash
+npm install @angular/cdk@10.0.2 --save
+npm install angular-bootstrap-md@10.1.1 --save
+npm install -–save chart.js@2.5.0 @types/chart.js @fortawesome/fontawesome-free hammerjs animate.css 
+ng serve --o 
+
 ```
 
 
@@ -114,13 +127,13 @@ Login Succeeded
 ### Env
 
 ```bash
+export IMAGE_ORG=tokdev
 # Service Webstore
 export SERVICE_LOCALTION1=sc-webstore
 export DOCKERFILE_LOCALTION1=Dockerfile
 export SERVICE_NAME1=webstore
 export CONTAINER_NAME1=sc.webstore
 export HOST_NAME1=sc.webstore
-export IMAGE_ORG1=tokdev
 export IMAGE_NAME1=sc.webstore
 export IMAGE_TAG1=1.0.0
 
@@ -161,5 +174,23 @@ docker-compose -f docker-compose.yml config
 docker-compose up --detach
 # OR
 docker-compose up
+```
+
+
+### Test All Frontend
+
+
+```bash
+make frontend
+
+```
+
+
+### Test e2e Frontend
+
+
+```bash
+make run_e2e_frontend
+
 ```
 
