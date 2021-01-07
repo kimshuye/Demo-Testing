@@ -8,7 +8,7 @@ on:
     - main
     - develop
     - feature/hello-world
-    - feature/hello-world*
+    - feature/*
 
 env:
   GITHUB_NODE_VERSION: 15.4.0

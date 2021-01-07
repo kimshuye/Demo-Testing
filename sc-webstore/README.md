@@ -1,4 +1,4 @@
-# angular10demo
+# sc-webstore
 
 
 ## Install Nodejs
