@@ -127,13 +127,13 @@ Login Succeeded
 ### Env
 
 ```bash
+export IMAGE_ORG=tokdev
 # Service Webstore
 export SERVICE_LOCALTION1=sc-webstore
 export DOCKERFILE_LOCALTION1=Dockerfile
 export SERVICE_NAME1=webstore
 export CONTAINER_NAME1=sc.webstore
 export HOST_NAME1=sc.webstore
-export IMAGE_ORG1=tokdev
 export IMAGE_NAME1=sc.webstore
 export IMAGE_TAG1=1.0.0
 
@@ -174,5 +174,23 @@ docker-compose -f docker-compose.yml config
 docker-compose up --detach
 # OR
 docker-compose up
+```
+
+
+### Test All Frontend
+
+
+```bash
+make frontend
+
+```
+
+
+### Test e2e Frontend
+
+
+```bash
+make run_e2e_frontend
+
 ```
 
