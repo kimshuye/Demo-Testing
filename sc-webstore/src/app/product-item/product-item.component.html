@@ -1,21 +1,25 @@
 <mdb-card>
   <mdb-card-body>
   <!--Card image-->
-  <mdb-card-img src="{{productItem.image_url}}" alt="Card image cap"></mdb-card-img>
   <!-- <mdb-card-img src="../assets/data/images/image{{productItem.id}}.jpeg" alt="Card image cap"></mdb-card-img> -->
+  <!-- <figure class="figure"> -->
+    <img id="productImage{{productItem.id}}" src="{{productItem.image_url}}" class="figure-img img-fluid z-depth-1"
+      alt="..." style="width: 400px">
+    <!-- <figcaption class="figure-caption">A caption for the above image.</figcaption> -->
+  <!-- </figure> -->
 
   <!--Card content-->
 
     <!--Title-->
     <mdb-card-title>
-      <h4>{{productItem.name}}</h4>
+      <h4 id="productName{{productItem.id}}">{{productItem.name}}</h4>
     </mdb-card-title>
 
     <!--Text-->
     <mdb-card-text>
-      {{productItem.price}}
+      <span id="productPrice{{productItem.id}}">{{productItem.price}}</span> <span id="productCurrency{{productItem.id}}"> {{productItem.currency}}</span>
     </mdb-card-text>
 
-    <a [routerLink]="['/product',productItem.id]" mdbBtn color="primary" mdbWavesEffect>View More</a>
+    <a id="btView{{productItem.id}}" [routerLink]="['/product',productItem.id]" mdbBtn color="primary" mdbWavesEffect>View More</a>
   </mdb-card-body>
 </mdb-card>

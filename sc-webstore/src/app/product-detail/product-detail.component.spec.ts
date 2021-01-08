@@ -1,13 +1,16 @@
 import { TestBed , async } from '@angular/core/testing';
 import { RouterTestingModule } from '@angular/router/testing';
 
+import { FormsModule } from '@angular/forms';
+
 import { ProductDetailComponent } from './product-detail.component';
 
 describe('ProductDetailComponent', () => {
   beforeEach(async(() => {
     TestBed.configureTestingModule({
       imports: [
-        RouterTestingModule
+        RouterTestingModule,
+        FormsModule
       ],
       declarations: [
         ProductDetailComponent
