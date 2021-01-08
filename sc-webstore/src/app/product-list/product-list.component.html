@@ -1,18 +1,18 @@
 
 <!-- Check Items > 0 -->
 
-<div class="container">
+<div class="container" *ngIf="products.length>0 ">
     
     <!-- Render item1 to itme3   -->
-    <div class="row">
-      <div class="col">
-        <app-product-item [productItem]="products[0]"></app-product-item>
+    <div class="row" >
+      <div class="col" style="max-height: 500px;">
+        <app-product-item [productItem]="products[0]" ></app-product-item>
       </div>
-      <div class="col">
-        One of three columns
+      <div class="col" style="max-height: 500px;">
+        <app-product-item [productItem]="products[1]" ></app-product-item>
       </div>
-      <div class="col">
-        One of three columns
+      <div class="col" style="max-height: 500px;">
+        <app-product-item [productItem]="products[2]" ></app-product-item>
       </div>
     </div>
 
@@ -20,14 +20,14 @@
 
     <!-- Render item4 to itme6   -->
     <div class="row">
-      <div class="col">
-        <app-product-item [productItem]="products[1]"></app-product-item>
+      <div class="col" style="max-height: 500px;">
+        <app-product-item [productItem]="products[3]" ></app-product-item>
       </div>
-      <div class="col">
-        One of three columns
+      <div class="col" style="max-height: 500px;">
+        <app-product-item [productItem]="products[4]" ></app-product-item>
       </div>
-      <div class="col">
-        One of three columns
+      <div class="col" style="max-height: 500px;">
+        <app-product-item [productItem]="products[5]" ></app-product-item>
       </div>
     </div>
     

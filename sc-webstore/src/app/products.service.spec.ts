@@ -21,12 +21,12 @@ describe('ProductsService', () => {
 
   it('Find id should be 1', () => {
 
-    var id = 1;
-    var expectId = 1;
+    const id = 1;
+    const expectId = 1;
 
-    let result = service.getDataByID(id);
+    const result = service.getDataByID(id);
 
     expect(result.id).toEqual(expectId);
   });
-  
+
 });

@@ -17,9 +17,9 @@ export class ProductDetailComponent implements OnInit, OnDestroy {
   product: any;
 
   constructor(private route: ActivatedRoute
-    ,private productsServices:ProductsService
+    ,         private productsServices: ProductsService
   ) {
-    
+
   }
 
   ngOnInit() {
@@ -29,7 +29,7 @@ export class ProductDetailComponent implements OnInit, OnDestroy {
 
        // In a real app: dispatch action to load the details here.
 
-      this.product = this.productsServices.getDataByID(this.id)
+       this.product = this.productsServices.getDataByID(this.id);
     });
   }
 
