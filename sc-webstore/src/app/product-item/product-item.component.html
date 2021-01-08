@@ -1,8 +1,12 @@
 <mdb-card>
   <mdb-card-body>
   <!--Card image-->
-  <mdb-card-img src="{{productItem.image_url}}" alt="Card image cap" id="productImage{{productItem.id}}"></mdb-card-img>
   <!-- <mdb-card-img src="../assets/data/images/image{{productItem.id}}.jpeg" alt="Card image cap"></mdb-card-img> -->
+  <!-- <figure class="figure"> -->
+    <img id="productImage{{productItem.id}}" src="{{productItem.image_url}}" class="figure-img img-fluid z-depth-1"
+      alt="..." style="width: 400px">
+    <!-- <figcaption class="figure-caption">A caption for the above image.</figcaption> -->
+  <!-- </figure> -->
 
   <!--Card content-->
 
