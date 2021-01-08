@@ -1,23 +1,11 @@
-
 pipeline {
     agent any
 
-    stage('Test') {
-        steps {
-            echo 'make frontend'
-        }
-    }
     stages {
-        stage('Build') {
+        stage('Test') {
             steps {
-                echo 'Building..'
-            }
-        }
-        stage('Deploy') {
-            steps {
-                echo 'Deploying....'
+                sh 'make frontend' 
             }
         }
     }
 }
-
