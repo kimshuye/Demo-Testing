@@ -1,6 +1,6 @@
 
 <!-- Default form subscription -->
-<form class="">
+<form class="" #productTemp="ngForm" (ngSubmit)="onSubmit(productTemp)">
     <div class="container">
         <div class="row">
             <div class="col">
@@ -54,8 +54,8 @@
                                     name="productQuantity" 
                                     type="number" 
                                     id="productQuantity"
-                                    [(ngModel)]="productQuantity" 
-                                    #input="ngModel" 
+                                    [(ngModel)]="quantity" 
+                                    #productQuantity="ngModel"
                                     min="1" 
                                     style="width: 100px;">
                                 <!-- <label for="form4">min value validator</label>
