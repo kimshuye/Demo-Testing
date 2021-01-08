@@ -9,10 +9,12 @@ import { ActivatedRoute } from '@angular/router';
 export class ProductDetailComponent implements OnInit, OnDestroy {
   id: number;
   private sub: any;
+  productQuantity: number;
 
   constructor(private route: ActivatedRoute) {}
 
   ngOnInit() {
+    this.productQuantity = 1;
     this.sub = this.route.params.subscribe(params => {
        this.id = +params.id; // (+) converts string 'id' to a number
 

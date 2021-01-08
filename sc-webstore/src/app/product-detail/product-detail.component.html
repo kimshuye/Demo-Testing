@@ -1,1 +1,77 @@
-<p>product-detail {{id}}</p>
+
+<!-- Default form subscription -->
+<form class="">
+    <div class="container">
+        <div class="row">
+            <div class="col">
+                <h3 id="productName">Product Name {{id}}</h3>
+            </div>
+            <div class="col">Column</div>
+        </div>
+        <div class="row">
+            <div class="col">
+                <img id="productImage" src="https://mdbootstrap.com/img/Photos/Horizontal/Nature/8-col/img%20(73).jpg" class="figure-img img-fluid z-depth-1"
+                alt="..." style="width: 400px">
+            </div>
+            <div class="col">
+                <div class="container">
+                    <div class="row">
+                        <div class="col list-group">
+                            <div class="row list-group-item borderIsZero">
+                                <span id="labelBrand">Brand</span>
+                            </div>
+                            <div class="row list-group-item borderIsZero">
+                                <span id="labelGender">Gender</span>
+                            </div>
+                            <div class="row list-group-item borderIsZero">
+                                <span id="labelAge">Age</span>
+                            </div>
+                            <div class="row list-group-item borderIsZero">
+                                <span id="labelPrice">Price</span>
+                            </div>
+                            <div class="row list-group-item borderIsZero">
+                                <span id="labelQuantity">Quantity</span>
+                            </div>
+                        </div>
+                        <div class="col col-lg-4 list-group">
+                            <div class="row list-group-item borderIsZero">
+                                <span id="productBrand">Brand</span>
+                            </div>
+                            <div class="row list-group-item borderIsZero">
+                                <span id="productGender">Gender</span>
+                            </div>
+                            <div class="row list-group-item borderIsZero">
+                                <span id="productAge">Age</span>
+                            </div>
+                            <div class="row list-group-item borderIsZero">
+                                <span id="productPrice">Price</span>
+                            </div>
+                            <div class="row list-group-item borderIsZero">
+                            
+                                <input mdbInput mdbValidate 
+                                    color="info"
+                                    block="true"
+                                    name="productQuantity" 
+                                    type="number" 
+                                    id="productQuantity"
+                                    [(ngModel)]="productQuantity" 
+                                    #input="ngModel" 
+                                    min="1" 
+                                    style="width: 100px;">
+                                <!-- <label for="form4">min value validator</label>
+                                <mdb-error *ngIf="input.invalid && (input.dirty || input.touched)">Input invalid</mdb-error>
+                                <mdb-success *ngIf="input.valid && (input.dirty || input.touched)">Input valid</mdb-success> -->
+                            
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <button mdbBtn size="lg" color="info" type="submit" mdbWavesEffect>Add to Cart</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</form>
+<!-- Default form subscription -->
+
