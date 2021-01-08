@@ -14,7 +14,19 @@ describe('ProductsService', () => {
     expect(service).toBeTruthy();
   });
 
-  it('should be created', () => {
+  it('should be Array Products', () => {
     expect(service.getData()).toBeTruthy();
   });
+
+
+  it('Find id should be 1', () => {
+
+    var id = 1;
+    var expectId = 1;
+
+    let result = service.getDataByID(id);
+
+    expect(result.id).toEqual(expectId);
+  });
+  
 });

@@ -4,13 +4,13 @@
     <div class="container">
         <div class="row">
             <div class="col">
-                <h3 id="productName">Product Name {{id}}</h3>
+                <h3 id="productName">{{product.name}}</h3>
             </div>
-            <div class="col">Column</div>
+            <div class="col"></div>
         </div>
         <div class="row">
             <div class="col">
-                <img id="productImage" src="https://mdbootstrap.com/img/Photos/Horizontal/Nature/8-col/img%20(73).jpg" class="figure-img img-fluid z-depth-1"
+                <img id="productImage" src="{{product.image_url}}" class="figure-img img-fluid z-depth-1"
                 alt="..." style="width: 400px">
             </div>
             <div class="col">
@@ -35,16 +35,16 @@
                         </div>
                         <div class="col col-lg-4 list-group">
                             <div class="row list-group-item borderIsZero">
-                                <span id="productBrand">Brand</span>
+                                <span id="productBrand">{{product.brand}}</span>
                             </div>
                             <div class="row list-group-item borderIsZero">
-                                <span id="productGender">Gender</span>
+                                <span id="productGender">{{product.gender}}</span>
                             </div>
                             <div class="row list-group-item borderIsZero">
-                                <span id="productAge">Age</span>
+                                <span id="productAge">{{product.age}}</span>
                             </div>
                             <div class="row list-group-item borderIsZero">
-                                <span id="productPrice">Price</span>
+                                <span id="productPrice">{{product.price}}</span> <span id="productPrice"> {{product.currency}}</span>
                             </div>
                             <div class="row list-group-item borderIsZero">
                             

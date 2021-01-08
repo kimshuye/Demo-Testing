@@ -3,6 +3,8 @@ import { ActivatedRoute } from '@angular/router';
 
 import {NgForm} from '@angular/forms';
 
+import {ProductsService} from '../products.service';
+
 @Component({
   selector: 'app-product-detail',
   templateUrl: './product-detail.component.html',
@@ -12,8 +14,13 @@ export class ProductDetailComponent implements OnInit, OnDestroy {
   id: number;
   private sub: any;
   quantity: any;
+  product: any;
 
-  constructor(private route: ActivatedRoute) {}
+  constructor(private route: ActivatedRoute
+    ,private productsServices:ProductsService
+  ) {
+    
+  }
 
   ngOnInit() {
     this.quantity = 1;
@@ -21,6 +28,8 @@ export class ProductDetailComponent implements OnInit, OnDestroy {
        this.id = +params.id; // (+) converts string 'id' to a number
 
        // In a real app: dispatch action to load the details here.
+
+      this.product = this.productsServices.getDataByID(this.id)
     });
   }
 

@@ -12,9 +12,7 @@ export class ProductListComponent implements OnInit {
   products:any[];
 
   constructor(private productsServices:ProductsService) {
-    this.products = this.productsServices.getData()
-    console.log(this.products);
-    
+    this.products = this.productsServices.getData()    
   }
 
   ngOnInit(): void {

@@ -11,6 +11,10 @@ export class ProductsService {
 
   constructor(){}
 
+  getDataByID(id){
+    return this.products.filter(x => x.id === id)[0];
+  }
+
   getData(){
     return this.products;
   }
