@@ -7,20 +7,14 @@ pipeline {
       }
     }
 
-    stage('code analysis') {
+    stage('Run Test') {
       parallel {
         stage('code analysis frontend') {
           steps {
             sh 'make code_analysis_frontend'
           }
         }
-
-      }
-    }
-
-    stage('run unit test') {
-      parallel {
-        stage('code analysis frontend') {
+        stage('run unittest frontend') {
           steps {
             sh 'make run_unittest_frontend'
           }
@@ -28,6 +22,7 @@ pipeline {
 
       }
     }
+
 
 
     // stage('build') {
