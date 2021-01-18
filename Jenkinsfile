@@ -1,10 +1,12 @@
 pipeline {
   environment {
     // registry = "docker_hub_account/repository_name"
-    registryCredential = ‘dockerhub’
+    registryCredential = 'dockerhub'
   }
   agent {
-    docker { image 'nodejs:15.4.0' }
+    docker .withRegistry( '', registryCredential ){
+      image 'nodejs:15.4.0' 
+    }
   }
   tools {nodejs "node"}
   stages {
