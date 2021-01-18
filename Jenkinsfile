@@ -1,5 +1,7 @@
 pipeline {
-  agent any
+  agent {
+    docker { image 'golang:1.12' }
+  }
   tools {nodejs "node"}
   stages {
     stage('install dependency') {
@@ -28,9 +30,8 @@ pipeline {
       parallel {
         stage('build frontend') {
           steps {
-            sh 'id'
-            sh 'groups'
-            // sh 'make build_frontend'
+            sh 'go'
+            // sh 'docker-compose build webstore'
           }
         }
       }
