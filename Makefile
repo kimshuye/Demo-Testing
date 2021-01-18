@@ -10,18 +10,18 @@ code_analysis_frontend:
 run_unittest_frontend:
 	cd sc-webstore && npm run test
 build_frontend:
-	docker-compose build webstore
+	sudo docker-compose build webstore
 run_e2e_frontend:
 	cd sc-webstore && npm run e2e
 
 webstore_start:
-	docker-compose up -d webstore
+	sudo docker-compose up -d webstore
 
 start_service:
-	docker-compose up -d
+	sudo docker-compose up -d
 
 
 stop_service:
-	docker-compose down
+	sudo docker-compose down
 
 
