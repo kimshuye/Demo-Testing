@@ -29,16 +29,6 @@ pipeline {
       }
     }
 
-    stage('run unit test') {
-      parallel {
-        stage('code analysis frontend') {
-          steps {
-            sh 'make run_unittest_frontend'
-          }
-        }
-
-      }
-    }
 
     stage('build') {
       parallel {
@@ -50,11 +40,9 @@ pipeline {
       }
     }
 
-    stages {
-      stage('Start All Service') {
-        steps {
-          sh 'make start_service' 
-        }
+    stage('Start All Service') {
+      steps {
+        sh 'make start_service' 
       }
     }
 
