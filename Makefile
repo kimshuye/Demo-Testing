@@ -20,4 +20,11 @@ build_frontend:
 webstore_start:
 	docker-compose up -d webstore
 
+start_service:
+	docker-compose up -d
+
+
+stop_service:
+	docker-compose down
+
 
