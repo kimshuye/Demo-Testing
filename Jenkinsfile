@@ -4,7 +4,7 @@ pipeline {
     registryCredential = 'dockerhub'
   }
   agent {
-    docker .withRegistry( '', registryCredential ){
+    docker.withRegistry( '', registryCredential ){
       image 'nodejs:15.4.0' 
     }
   }
