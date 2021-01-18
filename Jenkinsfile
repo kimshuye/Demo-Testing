@@ -30,28 +30,28 @@ pipeline {
     }
 
 
-    stage('build') {
-      parallel {
-        stage('build frontend') {
-          steps {
-            sh 'make build_frontend'
-          }
-        }
-      }
-    }
+    // stage('build') {
+    //   parallel {
+    //     stage('build frontend') {
+    //       steps {
+    //         sh 'make build_frontend'
+    //       }
+    //     }
+    //   }
+    // }
 
-    stage('Start All Service') {
-      steps {
-        sh 'make start_service' 
-      }
-    }
-
-  }
-
-  post {
-    always {
-      sh 'make stop_service'
-    }
+    // stage('Start All Service') {
+    //   steps {
+    //     sh 'make start_service' 
+    //   }
+    // }
 
   }
+
+//   post {
+//     always {
+//       sh 'make stop_service'
+//     }
+
+//   }
 }
