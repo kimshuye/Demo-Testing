@@ -12,11 +12,11 @@ pipeline {
     }
 
     stage('Run Test') {
-      agent {
-        docker { image 'node:15.4.0' }
-      }
       parallel {
         stage('code analysis frontend') {
+          agent {
+            docker { image 'node:15.4.0' }
+          }
           steps {
             // sh 'make code_analysis_frontend'
             sh 'cd sc-webstore && npm run lint'
