@@ -22,31 +22,29 @@ pipeline {
 
       }
     }
+    
+    stage('Test build Image') {
+      parallel {
+        stage('build frontend') {
+          steps {
+            sh 'make build_frontend'
+          }
+        }
+      }
+    }
 
-
-
-    // stage('build') {
-    //   parallel {
-    //     stage('build frontend') {
-    //       steps {
-    //         sh 'make build_frontend'
-    //       }
-    //     }
-    //   }
-    // }
-
-    // stage('Start All Service') {
-    //   steps {
-    //     sh 'make start_service' 
-    //   }
-    // }
+    stage('Start All Service') {
+      steps {
+        sh 'make start_service' 
+      }
+    }
 
   }
 
-//   post {
-//     always {
-//       sh 'make stop_service'
-//     }
-
-//   }
+  post {
+    always {
+      sh 'make stop_service'
+    }
+  }
+  
 }
