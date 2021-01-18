@@ -3,12 +3,11 @@ pipeline {
     // registry = "docker_hub_account/repository_name"
     registryCredential = 'dockerhub'
   }
-  agent {
-    docker.withRegistry( '', registryCredential ){
-      image 'nodejs:15.4.0' 
-    }
+  agent any
+  tools {
+    nodejs "node"
+    golang "go"
   }
-  tools {nodejs "node"}
   stages {
     stage('install dependency') {
       steps {
