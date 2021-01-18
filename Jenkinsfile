@@ -1,6 +1,6 @@
 pipeline {
   agent {
-    docker { image 'golang:1.12' }
+    docker { image 'nodejs:15.4.0' }
   }
   tools {nodejs "node"}
   stages {
