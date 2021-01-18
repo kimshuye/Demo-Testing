@@ -14,9 +14,6 @@ build_frontend:
 run_e2e_frontend:
 	cd sc-webstore && npm run e2e
 
-build_frontend:
-	docker-compose build webstore
-
 webstore_start:
 	docker-compose up -d webstore
 
