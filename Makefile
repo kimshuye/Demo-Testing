@@ -1,5 +1,5 @@
 
-frontend: install_dependency_frondend code_analysis_frontend run_unittest_frontend run_e2e_frontend build_frontend
+frontend: install_dependency_frondend code_analysis_frontend run_unittest_frontend run_e2e_frontend 
 
 run_frontend: build_frontend webstore_start
 
