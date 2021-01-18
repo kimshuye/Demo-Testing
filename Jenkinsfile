@@ -6,7 +6,6 @@ pipeline {
   agent any
   tools {
     nodejs "node"
-    golang "go"
   }
   stages {
     stage('install dependency') {
